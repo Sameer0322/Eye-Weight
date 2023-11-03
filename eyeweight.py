@@ -30,7 +30,9 @@ while True:
     faces = detector(gray)
     all_landmarks = []
     all_statuses = []
-
+    x1=x2=x3=x4=0
+    status=""
+    color=(0,0,0)
     for face in faces:
         x1 = face.left()
         y1 = face.top()
@@ -48,7 +50,7 @@ while True:
         color = (0, 0, 0)
 
         if left_blink == 0 or right_blink == 0:
-            status = "SLEEPING"
+            status = "Sleepy"
             color = (255, 0, 0)
         elif left_blink == 1 or right_blink == 1:
             status = "Drowsy"
